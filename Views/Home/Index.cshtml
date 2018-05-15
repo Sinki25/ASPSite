@@ -1,0 +1,164 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+             integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+       <!— Optional theme —>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-responsive.min.css"
+             integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+    <meta charset="utf-8">
+    <title>Tasty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Html5TemplatesDreamweaver.com">
+    <!--   //  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">  Remove this Robots Meta Tag, to allow indexing of site -->
+
+    <link href="/site/scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site/scripts/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link href="/site/scripts/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/site/scripts/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]>
+        <link href="scripts/icons/general/stylesheets/general_foundicons_ie7.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="scripts/icons/social/stylesheets/social_foundicons_ie7.css" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link rel="stylesheet" href="/site/scripts/fontawesome/css/font-awesome.min.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="scripts/fontawesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+
+    <link href="/site/scripts/carousel/style.css" rel="stylesheet" type="text/css" />
+    <link href="/site/scripts/camera/css/camera.css" rel="stylesheet" type="text/css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Allura" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Palatino+Linotype" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet" type="text/css">
+
+    <link href="/site/styles/custom.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="pageBody">
+
+    <div id="decorative2">
+        <div class="container">
+
+            <div class="divPanel topArea notop nobottom">
+                <div class="row-fluid">
+                    <div class="span12">
+
+                        <div id="divLogo" class="pull-left">
+                            <a href="@Url.Action("Index", "Home")" id="divSiteTitle">Тэмле</a><br />
+                            <a href="@Url.Action("Index", "Home")" id="divTagLine">Быстро, вкусно и с любовью</a>
+                        </div>
+
+                        <div id="divMenuRight" class="pull-right">
+                            <div class="navbar">
+                                <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
+                                    NAVIGATION <span class="icon-chevron-down icon-white"></span>
+                                </button>
+                                <div class="nav-collapse collapse">
+                                    <ul class="nav nav-pills ddmenu">
+                                        <li class="dropdown active"><a href="@Url.Action("Index", "Home")">На главную</a></li>
+                                        @if (ViewBag.Auth == 1)
+                                         {
+                                            <li class="dropdown">
+                                                <a href="@Url.Action("Logout", "Account")">Выйти</a>
+                                            </li>
+                                         }
+                                         else
+                                         {
+                                            <li class="dropdown">
+                                                <a href="@Url.Action("Registration", "Account")">Регистрация</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="@Url.Action("Auth", "Account")">Войти</a>
+                                            </li>
+                                         }
+
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="contentOuterSeparator"></div>
+
+    <div class="container">
+
+        <div class="divPanel page-content">
+            <!--Edit Main Content Area here-->
+            <div class="row-fluid">
+
+                <div class="span12" id="divMain">
+
+                    <h1>Добро пожаловать!</h1>
+
+                    <p>Часто бывает, что у нас просто нет времени и сил на приготовление вкусной пищи. Доставка еды, свежей, ароматной и только что приготовленной – вот отличный вариант, если Вам нужно хорошо поужинать в кругу семьи, накрыть стол для романтического вечера со своей второй половинкой или устроить обед в офисе.<strong> Тэмле</strong>  объединил на одном сайте многие рестораны, бары и кафе Казани, осуществляющие доставку еды, чтобы Вы могли быстро и удобно оформить заказ.</p>
+
+                    <hr style="margin:45px 0 35px" />
+
+                    <div class="row-fluid">
+
+                        <div class="span4">
+                            <h4>Вегетарианское меню</h4>
+                            <img src="/site/images/caprese.jpg" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
+                            <p><a href="@Url.Action("Cafe", "Cafe", new {id=1, type = "Веган" })" class="btn btn-primary" style="margin:5px 0px 15px;">Подробнее</a></p>
+                        </div>
+
+                        <div class="span4">
+                            <h4>Пицца</h4>
+                            <img src="/site/images/pizza2.jpg" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
+                            <p><a href="@Url.Action("Cafe", "Cafe", new {id=2 ,type = "Пицца" })" class="btn btn-primary" style="margin:5px 0px 15px;">Подробнее</a></p>
+                        </div>
+
+                        <div class="span4">
+                            <h4>Роллы</h4>
+                            <img src="/site/images/roll.jpg" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
+                            <p><a href="@Url.Action("Cafe", "Cafe", new {id=3, type = "Роллы" })" class="btn btn-primary" style="margin:5px 0px 15px;">Подробнее</a></p>
+                        </div>
+
+                    </div>
+
+                    <hr style="margin:45px 0 35px" />
+
+
+                    <br />
+
+
+
+                </div>
+
+            </div>
+            <!--End Main Content Area here-->
+
+            <div id="footerInnerSeparator"></div>
+        </div>
+
+    </div>
+
+    <div id="footerOuterSeparator"></div>
+</body>
+</html>

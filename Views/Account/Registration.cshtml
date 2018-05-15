@@ -1,0 +1,152 @@
+﻿@model ASP.Models.RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SignUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="/site/scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site/scripts/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link href="/site/scripts/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/site/scripts/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]>
+        <link href="scripts/icons/general/stylesheets/general_foundicons_ie7.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="scripts/icons/social/stylesheets/social_foundicons_ie7.css" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link rel="stylesheet" href="scripts/fontawesome/css/font-awesome.min.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="scripts/fontawesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+
+    <link href="http://fonts.googleapis.com/css?family=Allura" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Palatino+Linotype" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet" type="text/css">
+
+    <link href="/site/styles/custom.css" rel="stylesheet" type="text/css" />
+    <script src="/site/email/validation.js" type="text/javascript"></script>
+</head>
+<body id="pageBody">
+
+    <div id="decorative2">
+        <div class="container">
+
+            <div class="divPanel topArea notop nobottom">
+                <div class="row-fluid">
+                    <div class="span12">
+
+                        <div id="divLogo" class="pull-left">
+                            <a href="@Url.Action("Index", "Home")" id="divSiteTitle">Тэмле</a><br />
+                            <a href="@Url.Action("Index", "Home")" id="divTagLine">Быстро, вкусно и с любовью</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="contentOuterSeparator"></div>
+
+    <div class="container">
+
+        <div class="divPanel page-content">
+
+            <div class="row-fluid">
+                <div class="span8" id="divMain">
+                    <hr>
+                    <!--Start Contact form -->
+                    <form type="registration" name="enq" method="post" action="" onsubmit="return validation();">
+                        <fieldset>
+                            @using (Html.BeginForm("Registration", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+                        @Html.AntiForgeryToken()
+                        <h4>Создайте новую учетную запись.</h4>
+                        <hr />
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Year, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                        </div>
+}
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" class="btn btn-default" value="Регистрация" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+
+                    <!--End Contact form -->
+                </div>
+
+
+
+            </div>
+
+            <div id="footerInnerSeparator"></div>
+        </div>
+
+    </div>
+
+    <div id="footerOuterSeparator"></div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+    <script src="/site/scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="/site/scripts/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/site/scripts/default.js" type="text/javascript"></script>
+
+
+
+
+
+</body>
+</html>
